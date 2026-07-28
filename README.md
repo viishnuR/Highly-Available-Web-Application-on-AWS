@@ -1,46 +1,53 @@
 # 🚀 Highly Available Web Application on AWS
 
-A production-style AWS project demonstrating a **Highly Available Web Application** using **Amazon EC2**, **Application Load Balancer (ALB)**, **Amazon EFS**, and **Auto Scaling Group (ASG)**.
+A production-style AWS project that demonstrates how to build a **Highly Available** and **Scalable Web Application** using **Amazon EC2**, **Application Load Balancer (ALB)**, **Auto Scaling Group (ASG)**, and **Amazon Elastic File System (EFS)**.
 
 ---
 
-## 📌 Project Overview
+# 📖 Project Overview
 
-This project deploys a scalable and highly available web application on AWS.
+This project implements a highly available web application architecture on AWS.
 
-The application is hosted on multiple EC2 instances behind an Application Load Balancer while sharing website files through Amazon Elastic File System (EFS). Auto Scaling automatically launches or terminates EC2 instances based on demand.
+The application is deployed on multiple EC2 instances managed by an Auto Scaling Group. An Application Load Balancer distributes incoming traffic across healthy instances, while Amazon EFS provides shared storage so every EC2 instance serves the same website content.
+
+The infrastructure is designed to improve **availability**, **fault tolerance**, and **scalability**.
 
 ---
 
-## 🏗️ AWS Architecture
+# 🏗️ Architecture
 
 ```
-                    Internet
-                        │
-                        ▼
-        ┌──────────────────────────┐
-        │ Application Load Balancer│
-        └────────────┬─────────────┘
-                     │
-          ┌──────────┴──────────┐
-          ▼                     ▼
-    EC2 Instance 1        EC2 Instance 2
-          │                     │
-          └──────────┬──────────┘
-                     ▼
-              Amazon Elastic
-               File System
-                  (EFS)
+                           Internet
+                               │
+                               ▼
+                  Application Load Balancer
+                               │
+                         Target Group
+                               │
+              ┌────────────────┴────────────────┐
+              ▼                                 ▼
+        EC2 Instance 1                   EC2 Instance 2
+       (Apache + EFS)                  (Apache + EFS)
+              ▲                                 ▲
+              └──────────────┬──────────────────┘
+                             │
+                    Auto Scaling Group
+                             │
+                      Launch Template
+                             │
+                             ▼
+                  Amazon Elastic File System
+                            (EFS)
 ```
 
 ---
 
-## 🚀 AWS Services Used
+# 🛠 AWS Services Used
 
 - Amazon EC2
+- Amazon EFS
 - Application Load Balancer (ALB)
 - Auto Scaling Group (ASG)
-- Amazon Elastic File System (EFS)
 - Launch Template
 - Target Group
 - Security Groups
@@ -49,35 +56,175 @@ The application is hosted on multiple EC2 instances behind an Application Load B
 
 ---
 
-## ⚙️ Features
+# ⚙️ Project Workflow
+
+### Step 1
+Created an Amazon EFS file system with mount targets.
+
+### Step 2
+Launched Ubuntu EC2 instances.
+
+### Step 3
+Installed Apache2 Web Server.
+
+### Step 4
+Installed NFS utilities.
+
+### Step 5
+Mounted Amazon EFS to:
+
+```
+/mnt/efs
+```
+
+### Step 6
+Configured Apache to serve website files stored in Amazon EFS.
+
+### Step 7
+Created a Launch Template containing:
+
+- Ubuntu AMI
+- Instance Type
+- Security Group
+- Key Pair
+- User Data Script
+
+### Step 8
+Created an Auto Scaling Group using the Launch Template.
+
+### Step 9
+Created a Target Group.
+
+### Step 10
+Attached the Auto Scaling Group to the Target Group.
+
+### Step 11
+Created an Application Load Balancer.
+
+### Step 12
+Configured ALB Listener (HTTP :80).
+
+### Step 13
+Verified Target Group Health Checks.
+
+### Step 14
+Accessed the application using the ALB DNS Name.
+
+---
+
+# 🚀 Features
 
 - Highly Available Architecture
-- Automatic Load Distribution
+- Horizontal Auto Scaling
+- Automatic EC2 Provisioning
 - Shared Storage using Amazon EFS
-- Auto Scaling Support
+- Load Balancing using ALB
+- Automatic Health Checks
 - Launch Template Automation
-- Apache Web Server
-- Persistent Shared Website Files
 - Fault Tolerant Design
+- Shared Website Across Multiple Servers
 
 ---
 
-## 📂 Project Workflow
+# 📂 Repository Structure
 
-1. Launch Ubuntu EC2 instances.
-2. Install Apache2 automatically using User Data.
-3. Install NFS utilities.
-4. Mount Amazon EFS.
-5. Configure Apache to serve files from EFS.
-6. Create a Launch Template.
-7. Create an Auto Scaling Group.
-8. Register instances with a Target Group.
-9. Configure the Application Load Balancer.
-10. Access the application using the ALB DNS Name.
+```
+aws-highly-available-web-app/
+│
+├── README.md
+├── userdata.sh
+├── architecture.png
+└── screenshots/
+    ├── architecture.png
+    ├── ec2.png
+    ├── launch-template.png
+    ├── auto-scaling-group.png
+    ├── target-group.png
+    ├── load-balancer.png
+    ├── efs.png
+    ├── mounted-efs.png
+    └── webpage.png
+```
 
 ---
 
-## 🔧 User Data Script
+# 📸 Screenshots
+
+## Architecture
+
+> Add your AWS architecture diagram here.
+
+```
+screenshots/architecture.png
+```
+
+---
+
+## EC2 Instances
+
+```
+screenshots/ec2.png
+```
+
+---
+
+## Launch Template
+
+```
+screenshots/launch-template.png
+```
+
+---
+
+## Auto Scaling Group
+
+```
+screenshots/auto-scaling-group.png
+```
+
+---
+
+## Target Group
+
+```
+screenshots/target-group.png
+```
+
+---
+
+## Application Load Balancer
+
+```
+screenshots/load-balancer.png
+```
+
+---
+
+## Amazon EFS
+
+```
+screenshots/efs.png
+```
+
+---
+
+## Mounted EFS
+
+```
+screenshots/mounted-efs.png
+```
+
+---
+
+## Final Web Application
+
+```
+screenshots/webpage.png
+```
+
+---
+
+# 📜 User Data Script
 
 The Launch Template automatically performs:
 
@@ -86,145 +233,80 @@ The Launch Template automatically performs:
 - NFS Installation
 - Amazon EFS Mount
 - Apache Configuration
-- Automatic Startup
+- Automatic Apache Startup
 
 ---
 
-## 📁 Project Structure
+# ✅ Validation Performed
 
-```
-Project
-│
-├── README.md
-├── architecture.png
-├── userdata.sh
-├── screenshots
-│   ├── ec2.png
-│   ├── efs.png
-│   ├── alb.png
-│   ├── asg.png
-│   ├── target-group.png
-│   └── webpage.png
-```
+- Successfully connected EC2 to Amazon EFS
+- Mounted EFS on multiple EC2 instances
+- Verified shared website content across all instances
+- Configured Apache to serve files from EFS
+- Successfully created Launch Template
+- Successfully launched EC2 instances using Auto Scaling Group
+- Verified Target Group health checks
+- Verified Application Load Balancer routing
+- Successfully accessed the application using the ALB DNS name
 
 ---
 
-## 📸 Screenshots
-
-### AWS Architecture
-
-> Add your architecture diagram here.
-
-```
-screenshots/architecture.png
-```
-
----
-
-### EC2 Instances
-
-```
-screenshots/ec2.png
-```
-
----
-
-### Amazon EFS
-
-```
-screenshots/efs.png
-```
-
----
-
-### Application Load Balancer
-
-```
-screenshots/alb.png
-```
-
----
-
-### Auto Scaling Group
-
-```
-screenshots/asg.png
-```
-
----
-
-### Target Group
-
-```
-screenshots/target-group.png
-```
-
----
-
-### Web Application
-
-```
-screenshots/webpage.png
-```
-
----
-
-## 🧪 Validation Performed
-
-- Verified Apache Installation
-- Verified EFS Mount
-- Confirmed Shared Storage Between EC2 Instances
-- Verified ALB Health Checks
-- Tested Load Balancing
-- Tested Auto Scaling Instance Creation
-- Confirmed Automatic EFS Mount on New Instances
-
----
-
-## 🎯 Learning Outcomes
-
-Through this project, I gained hands-on experience with:
+# 🎯 Skills Demonstrated
 
 - Amazon EC2
-- Apache Web Server
-- Linux Administration
-- SSH & Key Pair Authentication
 - Amazon EFS
-- NFS Mounting
-- Application Load Balancer
-- Target Groups
-- Auto Scaling Groups
+- Application Load Balancer (ALB)
+- Auto Scaling Group (ASG)
 - Launch Templates
-- High Availability Architecture
+- Target Groups
+- Apache2
+- Linux Administration
+- SSH Authentication
+- NFS File System
 - AWS Networking
 - Security Groups
+- High Availability Architecture
 - Infrastructure Automation
 
 ---
 
-## 🚀 Future Improvements
+# 🔮 Future Improvements
 
 - HTTPS using AWS Certificate Manager (ACM)
-- Route 53 Domain Integration
-- CloudWatch Monitoring
+- Route 53 Custom Domain
+- CloudWatch Monitoring & Alarms
 - AWS WAF Integration
-- AWS CodePipeline CI/CD
+- AWS CodeDeploy
+- AWS CodePipeline (CI/CD)
 - Terraform Infrastructure as Code
-- Docker Container Deployment
-- ECS or EKS Migration
+- Docker Containerization
+- Amazon ECS Deployment
 
 ---
 
-## 👨‍💻 Author
+# 📚 Learning Outcomes
+
+Through this project, I learned how to:
+
+- Build a highly available web architecture on AWS.
+- Configure shared storage using Amazon EFS.
+- Automate EC2 provisioning with Launch Templates.
+- Scale applications automatically using Auto Scaling Groups.
+- Distribute traffic using an Application Load Balancer.
+- Configure Apache to serve content from shared storage.
+- Understand AWS networking, security groups, and health checks.
+
+---
+
+# 👨‍💻 Author
 
 **Vishnu R**
 
 Cloud & DevOps Enthusiast
 
-GitHub: https://github.com/your-username
-
-LinkedIn: https://linkedin.com/in/your-profile
+- GitHub: https://github.com/your-github-username
+- LinkedIn: https://linkedin.com/in/your-linkedin-profile
 
 ---
 
-## ⭐ If you found this project helpful, consider giving it a star!
+## ⭐ If you found this project useful, please consider giving it a Star!
