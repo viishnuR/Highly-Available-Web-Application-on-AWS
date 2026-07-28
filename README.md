@@ -206,7 +206,7 @@ screenshots/ELB.png
 ## Amazon EFS
 
 ```
-screenshots/EFS.png
+![Amazon EFS](screenshots/EFS.png)
 ```
 
 ---
