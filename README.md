@@ -132,8 +132,7 @@ Accessed the application using the ALB DNS Name.
 aws-highly-available-web-app/
 │
 ├── README.md
-├── userdata.sh
-├── architecture.png
+├── web code
 └── screenshots/
     ├── architecture.png
     ├── ec2.png
@@ -155,7 +154,7 @@ aws-highly-available-web-app/
 > Add your AWS architecture diagram here.
 
 ```
-screenshots/architecture.png
+screenshots/VPC.png
 ```
 
 ---
@@ -163,7 +162,7 @@ screenshots/architecture.png
 ## EC2 Instances
 
 ```
-screenshots/ec2.png
+screenshots/EC2.png
 ```
 
 ---
@@ -171,15 +170,19 @@ screenshots/ec2.png
 ## Launch Template
 
 ```
-screenshots/launch-template.png
+screenshots/Launch Tem.png
 ```
 
 ---
 
 ## Auto Scaling Group
+```
+screenshots/ASG.png
+```
+---
 
 ```
-screenshots/auto-scaling-group.png
+screenshots/ASG log.png
 ```
 
 ---
@@ -187,7 +190,7 @@ screenshots/auto-scaling-group.png
 ## Target Group
 
 ```
-screenshots/target-group.png
+screenshots/TG.png
 ```
 
 ---
@@ -195,7 +198,7 @@ screenshots/target-group.png
 ## Application Load Balancer
 
 ```
-screenshots/load-balancer.png
+screenshots/ELB.png
 ```
 
 ---
@@ -203,7 +206,7 @@ screenshots/load-balancer.png
 ## Amazon EFS
 
 ```
-screenshots/efs.png
+screenshots/EFS.png
 ```
 
 ---
@@ -211,7 +214,7 @@ screenshots/efs.png
 ## Mounted EFS
 
 ```
-screenshots/mounted-efs.png
+screenshots/Mount.png
 ```
 
 ---
