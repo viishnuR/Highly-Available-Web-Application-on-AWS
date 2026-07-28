@@ -304,8 +304,8 @@ Through this project, I learned how to:
 
 Cloud & DevOps Enthusiast
 
-- GitHub: https://github.com/your-github-username
-- LinkedIn: https://linkedin.com/in/your-linkedin-profile
+- GitHub: https://github.com/viishnu
+- LinkedIn: www.linkedin.com/in/vishnu-r14200407
 
 ---
 
