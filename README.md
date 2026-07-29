@@ -166,7 +166,7 @@ https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/155936e
 ## Launch Template
 
 ```
-[screenshots/Launch Tem.png](https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/858f4239f2adb2bdd5e351ba696bf88a86b06abf/screenshots/Launch%20Tem.png)
+![image alt](https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/858f4239f2adb2bdd5e351ba696bf88a86b06abf/screenshots/Launch%20Tem.png)
 ```
 
 ---
