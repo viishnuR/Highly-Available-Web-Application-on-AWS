@@ -148,21 +148,17 @@ aws-highly-available-web-app/
 ---
 
 # 📸 Screenshots
-
-## Architecture
-
-> Add your AWS architecture diagram here.
-
+## Vpc
 ```
-screenshorts/ELB.png
+https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/858f4239f2adb2bdd5e351ba696bf88a86b06abf/screenshots/VPC.png
 ```
-
 ---
+
 
 ## EC2 Instances
 
 ```
-screenshots/EC2.png
+https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/155936ecac664f13a8f299adf5b94414c3034149/screenshots/ec2%20ASG.png
 ```
 
 ---
@@ -170,35 +166,25 @@ screenshots/EC2.png
 ## Launch Template
 
 ```
-screenshots/Launch Tem.png
+[screenshots/Launch Tem.png](https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/858f4239f2adb2bdd5e351ba696bf88a86b06abf/screenshots/Launch%20Tem.png)
 ```
 
 ---
 
 ## Auto Scaling Group
 ```
-screenshots/ASG.png
+[screenshots/ASG.png](https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/858f4239f2adb2bdd5e351ba696bf88a86b06abf/screenshots/ASG.png)
 ```
 ---
-
 ```
-screenshots/ASG log.png
+](https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/858f4239f2adb2bdd5e351ba696bf88a86b06abf/screenshots/ASG%20log.png)
 ```
-
----
-
-## Target Group
-
-```
-screenshots/TG.png
-```
-
 ---
 
 ## Application Load Balancer
 
 ```
-screenshots/ELB.png
+[screenshots/ELB.png](https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/858f4239f2adb2bdd5e351ba696bf88a86b06abf/screenshots/ELB.png)
 ```
 
 ---
@@ -206,15 +192,7 @@ screenshots/ELB.png
 ## Amazon EFS
 
 ```
-![Amazon EFS](screenshots/EFS.png)
-```
-
----
-
-## Mounted EFS
-
-```
-screenshots/Mount.png
+[![Amazon EFS](screenshots/EFS.png)](https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/858f4239f2adb2bdd5e351ba696bf88a86b06abf/screenshots/EFS.png)
 ```
 
 ---
@@ -222,10 +200,25 @@ screenshots/Mount.png
 ## Final Web Application
 
 ```
-screenshots/webpage.png
+https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/155936ecac664f13a8f299adf5b94414c3034149/screenshots/scr1.png
 ```
 
 ---
+```
+https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/155936ecac664f13a8f299adf5b94414c3034149/screenshots/scr2.png
+```
+---
+```
+https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/155936ecac664f13a8f299adf5b94414c3034149/screenshots/scr3.png
+```
+---
+```
+https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/155936ecac664f13a8f299adf5b94414c3034149/screenshots/scr4.png
+```
+---
+```
+https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/155936ecac664f13a8f299adf5b94414c3034149/screenshots/scr5.png
+```
 
 # 📜 User Data Script
 
