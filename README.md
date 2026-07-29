@@ -154,7 +154,7 @@ aws-highly-available-web-app/
 > Add your AWS architecture diagram here.
 
 ```
-screenshorts/ALB.png
+screenshorts/ELB.png
 ```
 
 ---
