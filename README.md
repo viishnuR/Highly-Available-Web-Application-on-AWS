@@ -154,7 +154,7 @@ aws-highly-available-web-app/
 > Add your AWS architecture diagram here.
 
 ```
-screenshots/VPC.png
+screenshorts/ALB.png
 ```
 
 ---
