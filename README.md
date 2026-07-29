@@ -173,7 +173,7 @@ https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/155936e
 
 ## Auto Scaling Group
 ```
-[screenshots/ASG.png](https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/858f4239f2adb2bdd5e351ba696bf88a86b06abf/screenshots/ASG.png)
+![image atl](https://github.com/viishnuR/Highly-Available-Web-Application-on-AWS/blob/858f4239f2adb2bdd5e351ba696bf88a86b06abf/screenshots/ASG.jpg)
 ```
 ---
 ```
